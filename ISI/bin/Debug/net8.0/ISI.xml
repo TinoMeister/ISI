@@ -1,0 +1,100 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ISI</name>
+    </assembly>
+    <members>
+        <member name="M:ISI.Controllers.UsersController.Authenticate(ISI.Models.AuthRequest)">
+            <summary>
+            This Method Authenticate the User
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ISI.Models.AuthRequest">
+            <summary>
+            This Class is for Authentication Request
+            </summary>
+        </member>
+        <member name="P:ISI.Models.AuthRequest.Email">
+            <summary>
+            User's Email
+            </summary>
+        </member>
+        <member name="P:ISI.Models.AuthRequest.Password">
+            <summary>
+            User's Password
+            </summary>
+        </member>
+        <member name="T:ISI.Models.AuthResponse">
+            <summary>
+            This Class is for Authentication Response
+            </summary>
+        </member>
+        <member name="P:ISI.Models.AuthResponse.Token">
+            <summary>
+            User's Token
+            </summary>
+        </member>
+        <member name="P:ISI.Models.AuthResponse.Expiration">
+            <summary>
+            Token Expiration
+            </summary>
+        </member>
+        <member name="T:ISI.Models.RegistrationRequest">
+            <summary>
+            This Class is for Resgistrarion Request
+            </summary>
+        </member>
+        <member name="P:ISI.Models.RegistrationRequest.Email">
+            <summary>
+            User's Email
+            </summary>
+        </member>
+        <member name="P:ISI.Models.RegistrationRequest.Username">
+            <summary>
+            User's Username
+            </summary>
+        </member>
+        <member name="P:ISI.Models.RegistrationRequest.Password">
+            <summary>
+            User's Password
+            </summary>
+        </member>
+        <member name="P:ISI.Models.RegistrationRequest.Role">
+            <summary>
+            User's Role
+            </summary>
+        </member>
+        <member name="T:ISI.Models.User">
+            <summary>
+            This Class is for User
+            </summary>
+        </member>
+        <member name="P:ISI.Models.User.Id">
+            <summary>
+            User's Id
+            </summary>
+        </member>
+        <member name="P:ISI.Models.User.Email">
+            <summary>
+            User's Email
+            </summary>
+        </member>
+        <member name="P:ISI.Models.User.Username">
+            <summary>
+            User's Username
+            </summary>
+        </member>
+        <member name="P:ISI.Models.User.Password">
+            <summary>
+            User's Password
+            </summary>
+        </member>
+        <member name="P:ISI.Models.User.Role">
+            <summary>
+            User's Role
+            </summary>
+        </member>
+    </members>
+</doc>
