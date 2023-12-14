@@ -9,6 +9,11 @@ namespace ISI.Models;
 public class RegistrationRequest
 {
     /// <summary>
+    /// User's Name
+    /// </summary>
+    public string Name { get; set; } = null!;
+
+    /// <summary>
     /// User's Email
     /// </summary>
     [Required]

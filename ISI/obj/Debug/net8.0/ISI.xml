@@ -4,12 +4,112 @@
         <name>ISI</name>
     </assembly>
     <members>
+        <member name="M:ISI.Controllers.HousesController.Get">
+            <summary>
+            This Method Gets all the Houses
+            </summary>
+            <returns>An List of Houses</returns>
+        </member>
+        <member name="M:ISI.Controllers.HousesController.Get(System.Int32)">
+            <summary>
+            This Method Gets all the houses from 
+            </summary>
+            <param name="idUser">User's Id</param>
+            <returns>List of Houses</returns>
+        </member>
+        <member name="M:ISI.Controllers.HousesController.Post(ISI.Models.House)">
+            <summary>
+            This Method Creates an House
+            </summary>
+            <param name="house">Object type House</param>
+            <returns>Response</returns>
+        </member>
+        <member name="M:ISI.Controllers.HousesController.Put(System.Int32,ISI.Models.House)">
+            <summary>
+            This Method Updates an House
+            </summary>
+            <param name="id">House Id</param>
+            <param name="house">Object type House</param>
+            <returns>Response</returns>
+        </member>
+        <member name="M:ISI.Controllers.HousesController.Delete(System.Int32)">
+            <summary>
+            This Method deletes an House
+            </summary>
+            <param name="id">House Id</param>
+            <returns>Response</returns>
+        </member>
         <member name="M:ISI.Controllers.UsersController.Authenticate(ISI.Models.AuthRequest)">
             <summary>
             This Method Authenticate the User
             </summary>
-            <param name="request"></param>
-            <returns></returns>
+            <param name="request">Authentication Request</param>
+            <returns>Token</returns>
+        </member>
+        <member name="M:ISI.Controllers.UsersController.PostUser(ISI.Models.RegistrationRequest)">
+            <summary>
+            This Method Creates a new User
+            </summary>
+            <param name="request">Registration Request</param>
+            <returns>Token</returns>
+        </member>
+        <member name="T:ISI.Data.HouseRepositoryDB">
+            <summary>
+            This Class is for Connection to DB for House
+            </summary>
+        </member>
+        <member name="M:ISI.Data.HouseRepositoryDB.GetAllHouses">
+            <summary>
+            This Method gets all Houses
+            </summary>
+            <returns>List of Houses</returns>
+        </member>
+        <member name="M:ISI.Data.HouseRepositoryDB.GetHousesByUser(System.Int32)">
+            <summary>
+            This Method gets all the Houses by User
+            </summary>
+            <param name="idUser">User's Id</param>
+            <returns>List of Houses</returns>
+        </member>
+        <member name="M:ISI.Data.HouseRepositoryDB.CreateHouse(ISI.Models.House)">
+            <summary>
+            This Method creates a new House
+            </summary>
+            <param name="house"></param>
+            <returns>Boolean</returns>
+        </member>
+        <member name="M:ISI.Data.HouseRepositoryDB.UpdateHouse(ISI.Models.House)">
+            <summary>
+            This Method Updates an House
+            </summary>
+            <param name="house">Object Type House</param>
+            <returns>Boolean</returns>
+        </member>
+        <member name="M:ISI.Data.HouseRepositoryDB.DeleteHouse(System.Int32)">
+            <summary>
+            This Method deletes an House
+            </summary>
+            <param name="id">House's Id</param>
+            <returns>Boolean</returns>
+        </member>
+        <member name="T:ISI.Data.UserRepositoryDB">
+            <summary>
+            This Class is for Connection to DB for User
+            </summary>
+        </member>
+        <member name="M:ISI.Data.UserRepositoryDB.FindByEmail(System.String)">
+            <summary>
+            This Method find User by Email
+            </summary>
+            <param name="email">User's Email</param>
+            <returns>Object Type User</returns>
+        </member>
+        <member name="M:ISI.Data.UserRepositoryDB.CreateUser(ISI.Models.RegistrationRequest)">
+            <summary>
+            This Method creates User
+            </summary>
+            <param name="request">User Email and Password</param>
+            <returns>Boolean</returns>
         </member>
         <member name="T:ISI.Models.AuthRequest">
             <summary>
@@ -41,9 +141,64 @@
             Token Expiration
             </summary>
         </member>
+        <member name="T:ISI.Models.Device">
+            <summary>
+            This class represents a Device
+            </summary>
+        </member>
+        <member name="P:ISI.Models.Device.Id">
+            <summary>
+            Device's Id
+            </summary>
+        </member>
+        <member name="P:ISI.Models.Device.Name">
+            <summary>
+            Device's Name
+            </summary>
+        </member>
+        <member name="P:ISI.Models.Device.State">
+            <summary>
+            Device's State
+            </summary>
+        </member>
+        <member name="P:ISI.Models.Device.Value">
+            <summary>
+            Device's Value
+            </summary>
+        </member>
+        <member name="P:ISI.Models.Device.HouseId">
+            <summary>
+            Room's Id
+            </summary>
+        </member>
+        <member name="T:ISI.Models.House">
+            <summary>
+            This class represents a Home
+            </summary>
+        </member>
+        <member name="P:ISI.Models.House.Id">
+            <summary>
+            House's Id
+            </summary>
+        </member>
+        <member name="P:ISI.Models.House.Name">
+            <summary>
+            House's Name
+            </summary>
+        </member>
+        <member name="P:ISI.Models.House.UserId">
+            <summary>
+            House's Id
+            </summary>
+        </member>
         <member name="T:ISI.Models.RegistrationRequest">
             <summary>
             This Class is for Resgistrarion Request
+            </summary>
+        </member>
+        <member name="P:ISI.Models.RegistrationRequest.Name">
+            <summary>
+            User's Name
             </summary>
         </member>
         <member name="P:ISI.Models.RegistrationRequest.Email">
@@ -74,6 +229,11 @@
         <member name="P:ISI.Models.User.Id">
             <summary>
             User's Id
+            </summary>
+        </member>
+        <member name="P:ISI.Models.User.Name">
+            <summary>
+            User's Name
             </summary>
         </member>
         <member name="P:ISI.Models.User.Email">

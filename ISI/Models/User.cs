@@ -13,6 +13,11 @@ public class User
     public int Id { get; set; }
 
     /// <summary>
+    /// User's Name
+    /// </summary>
+    public string Name { get; set; } = null!;
+
+    /// <summary>
     /// User's Email
     /// </summary>
     public string Email { get; set; } = null!;
