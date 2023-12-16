@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using SOAP_DeviceWS;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -8,7 +9,7 @@ namespace ISI.Controllers
     /// <summary>
     /// Controller for managing devices.
     /// </summary>
-    //[Authorize]
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class DevicesController : ControllerBase
@@ -19,6 +20,7 @@ namespace ISI.Controllers
         /// Gets all devices.
         /// </summary>
         /// <returns>An ActionResult containing a list of all devices.</returns>
+        [Authorize(Roles = "Esp")]
         [HttpGet]
         public IActionResult GetAllDevices()
         {
@@ -39,6 +41,7 @@ namespace ISI.Controllers
         /// </summary>
         /// <param name="userId">The ID of the device to retrieve.</param>
         /// <returns>An ActionResult containing the device information.</returns>
+        [Authorize(Roles = "Esp")]
         [HttpGet("{userId}")]
         public IActionResult GetDeviceById(int userId)
         {
@@ -66,6 +69,7 @@ namespace ISI.Controllers
         /// </summary>
         /// <param name="device">The device information to insert.</param>
         /// <returns>An IActionResult indicating the result of the insertion.</returns>
+        [Authorize(Roles = "User")]
         [HttpPost]
         public IActionResult PostDevice([FromBody] Models.Device device)
         {
@@ -94,6 +98,7 @@ namespace ISI.Controllers
         /// <param name="id">The ID of the device to update.</param>
         /// <param name="device">The updated device information.</param>
         /// <returns>An IActionResult indicating the result of the update.</returns>
+        [Authorize(Roles = "User")]
         [HttpPut("{id}")]
         public IActionResult UpdateDevice(int id, [FromBody] Models.Device device)
         {
@@ -123,6 +128,7 @@ namespace ISI.Controllers
         /// </summary>
         /// <param name="id">The ID of the device to delete.</param>
         /// <returns>An IActionResult indicating the result of the deletion.</returns>
+        [Authorize(Roles = "User")]
         [HttpDelete("{id}")]
         public IActionResult DeleteDevice(int id)
         {
