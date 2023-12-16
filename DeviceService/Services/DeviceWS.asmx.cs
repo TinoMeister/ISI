@@ -19,7 +19,7 @@ namespace DeviceService.Services
         /// <summary>
         /// Retrieves all devices from the Devices table.
         /// </summary>
-        /// <returns>A DataSet containing all devices.</returns>
+        /// <returns>A List containing all devices.</returns>
         public List<Device> GetAllDevices()
         {
             List<Device> devices = new List<Device>();
@@ -70,7 +70,7 @@ namespace DeviceService.Services
         /// Retrieves a device from the Devices table based on the ID of the User.
         /// </summary>
         /// <param name="userId">The ID of the User to retrieve.</param>
-        /// <returns>A DataSet containing the device information.</returns>
+        /// <returns>A List containing the device information.</returns>
         public List<Device> GetDeviceByUserId(int userId)
         {
             List<Device> devices = new List<Device>();
@@ -201,7 +201,7 @@ namespace DeviceService.Services
 
         [WebMethod(Description = "Deletes devices from the Devices table based on their state.")]
         /// <summary>
-        /// Deletes devices from the Devices table based on their state.
+        /// Deletes devices from the Devices table based on their Id.
         /// </summary>
         /// <param name="id">The id of the devices to delete.</param>
         /// <returns>The number of rows affected by the delete operation.</returns>
