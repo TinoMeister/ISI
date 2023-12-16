@@ -42,7 +42,7 @@ namespace ISI.Controllers
         /// </summary>
         /// <param name="userId">The ID of the device to retrieve.</param>
         /// <returns>An ActionResult containing the device information.</returns>
-        [Authorize(Roles = "Esp")]
+        [Authorize(Roles = "Esp, User")]
         [HttpGet("{userId}")]
         public IActionResult GetDeviceById(int userId)
         {
