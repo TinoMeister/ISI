@@ -2,9 +2,7 @@ using ISI.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
-using SOAP_DeviceWS;
 using System.Reflection;
-using System.ServiceModel;
 using System.Text;
 using System.Text.Json.Serialization;
 

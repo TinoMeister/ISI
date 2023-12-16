@@ -183,7 +183,6 @@ C:\Users\arant\Desktop\LESI\3-1\ISI\ISI\ISI\obj\Debug\net8.0\ISI.genruntimeconfi
 C:\Users\arant\Desktop\LESI\3-1\ISI\ISI\ISI\obj\Debug\net8.0\ref\ISI.dll
 C:\Users\tiago\Code\School\ISI\tp2\ISI\REST\ISI\bin\Debug\net8.0\appsettings.Development.json
 C:\Users\tiago\Code\School\ISI\tp2\ISI\REST\ISI\bin\Debug\net8.0\appsettings.json
-C:\Users\tiago\Code\School\ISI\tp2\ISI\REST\ISI\bin\Debug\net8.0\Connected Services\SOAP_DeviceWS\ConnectedService.json
 C:\Users\tiago\Code\School\ISI\tp2\ISI\REST\ISI\bin\Debug\net8.0\ISI.exe
 C:\Users\tiago\Code\School\ISI\tp2\ISI\REST\ISI\bin\Debug\net8.0\ISI.deps.json
 C:\Users\tiago\Code\School\ISI\tp2\ISI\REST\ISI\bin\Debug\net8.0\ISI.runtimeconfig.json
@@ -268,3 +267,4 @@ C:\Users\tiago\Code\School\ISI\tp2\ISI\REST\ISI\obj\Debug\net8.0\ISI.xml
 C:\Users\tiago\Code\School\ISI\tp2\ISI\REST\ISI\obj\Debug\net8.0\ISI.pdb
 C:\Users\tiago\Code\School\ISI\tp2\ISI\REST\ISI\obj\Debug\net8.0\ISI.genruntimeconfig.cache
 C:\Users\tiago\Code\School\ISI\tp2\ISI\REST\ISI\obj\Debug\net8.0\ref\ISI.dll
+C:\Users\tiago\Code\School\ISI\tp2\ISI\REST\ISI\bin\Debug\net8.0\Connected Services\DeviceReference\ConnectedService.json
