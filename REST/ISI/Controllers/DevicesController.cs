@@ -14,6 +14,7 @@ namespace ISI.Controllers
     [ApiController]
     public class DevicesController : ControllerBase
     {
+        // Create an instance of the SOAP client for DeviceWS
         DeviceWSSoapClient _deviceWSClient = new DeviceWSSoapClient(new ());
 
         /// <summary>
@@ -37,7 +38,7 @@ namespace ISI.Controllers
         }
 
         /// <summary>
-        /// Gets a device by its ID.
+        /// Gets all device by the given userId.
         /// </summary>
         /// <param name="userId">The ID of the device to retrieve.</param>
         /// <returns>An ActionResult containing the device information.</returns>

@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\tiago\\Code\\School\\ISI\\tp2\\ISI\\REST\\ISI\\ISI.csproj": {}
+    "C:\\Users\\arant\\Desktop\\LESI\\3-1\\ISI\\ISI\\REST\\ISI\\ISI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\tiago\\Code\\School\\ISI\\tp2\\ISI\\REST\\ISI\\ISI.csproj": {
+    "C:\\Users\\arant\\Desktop\\LESI\\3-1\\ISI\\ISI\\REST\\ISI\\ISI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\tiago\\Code\\School\\ISI\\tp2\\ISI\\REST\\ISI\\ISI.csproj",
+        "projectUniqueName": "C:\\Users\\arant\\Desktop\\LESI\\3-1\\ISI\\ISI\\REST\\ISI\\ISI.csproj",
         "projectName": "ISI",
-        "projectPath": "C:\\Users\\tiago\\Code\\School\\ISI\\tp2\\ISI\\REST\\ISI\\ISI.csproj",
-        "packagesPath": "C:\\Users\\tiago\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\tiago\\Code\\School\\ISI\\tp2\\ISI\\REST\\ISI\\obj\\",
+        "projectPath": "C:\\Users\\arant\\Desktop\\LESI\\3-1\\ISI\\ISI\\REST\\ISI\\ISI.csproj",
+        "packagesPath": "C:\\Users\\arant\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\arant\\Desktop\\LESI\\3-1\\ISI\\ISI\\REST\\ISI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\tiago\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\arant\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,7 +22,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Users\\tiago\\Code\\GEHealthcare\\helper": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
