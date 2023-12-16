@@ -18,12 +18,12 @@
         /// <summary>
         /// Device's State
         /// </summary>
-        public bool State { get; set; }
+        public bool? State { get; set; }
 
         /// <summary>
         /// Device's Value
         /// </summary>
-        public double Value { get; set; }
+        public double? Value { get; set; }
 
         /// <summary>
         /// Room's Id

@@ -4,6 +4,46 @@
         <name>ISI</name>
     </assembly>
     <members>
+        <member name="T:ISI.Controllers.DevicesController">
+            <summary>
+            Controller for managing devices.
+            </summary>
+        </member>
+        <member name="M:ISI.Controllers.DevicesController.GetAllDevices">
+            <summary>
+            Gets all devices.
+            </summary>
+            <returns>An ActionResult containing a list of all devices.</returns>
+        </member>
+        <member name="M:ISI.Controllers.DevicesController.GetDeviceById(System.Int32)">
+            <summary>
+            Gets a device by its ID.
+            </summary>
+            <param name="userId">The ID of the device to retrieve.</param>
+            <returns>An ActionResult containing the device information.</returns>
+        </member>
+        <member name="M:ISI.Controllers.DevicesController.PostDevice(ISI.Models.Device)">
+            <summary>
+            Inserts a new device.
+            </summary>
+            <param name="device">The device information to insert.</param>
+            <returns>An IActionResult indicating the result of the insertion.</returns>
+        </member>
+        <member name="M:ISI.Controllers.DevicesController.UpdateDevice(System.Int32,ISI.Models.Device)">
+            <summary>
+            Updates a device by its ID.
+            </summary>
+            <param name="id">The ID of the device to update.</param>
+            <param name="device">The updated device information.</param>
+            <returns>An IActionResult indicating the result of the update.</returns>
+        </member>
+        <member name="M:ISI.Controllers.DevicesController.DeleteDevice(System.Int32)">
+            <summary>
+            Deletes a device by its ID.
+            </summary>
+            <param name="id">The ID of the device to delete.</param>
+            <returns>An IActionResult indicating the result of the deletion.</returns>
+        </member>
         <member name="M:ISI.Controllers.HousesController.Get">
             <summary>
             This Method Gets all the Houses

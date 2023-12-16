@@ -9,47 +9,372 @@
 
 namespace SOAP_DeviceWS
 {
+    using System.Runtime.Serialization;
     
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Device", Namespace="http://homeautomation.org/")]
+    public partial class Device : object
+    {
+        
+        private int IdField;
+        
+        private string NameField;
+        
+        private System.Nullable<bool> StateField;
+        
+        private System.Nullable<double> ValueField;
+        
+        private int HouseIdField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public int Id
+        {
+            get
+            {
+                return this.IdField;
+            }
+            set
+            {
+                this.IdField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string Name
+        {
+            get
+            {
+                return this.NameField;
+            }
+            set
+            {
+                this.NameField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public System.Nullable<bool> State
+        {
+            get
+            {
+                return this.StateField;
+            }
+            set
+            {
+                this.StateField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public System.Nullable<double> Value
+        {
+            get
+            {
+                return this.ValueField;
+            }
+            set
+            {
+                this.ValueField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=4)]
+        public int HouseId
+        {
+            get
+            {
+                return this.HouseIdField;
+            }
+            set
+            {
+                this.HouseIdField = value;
+            }
+        }
+    }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
     [System.ServiceModel.ServiceContractAttribute(Namespace="http://homeautomation.org/", ConfigurationName="SOAP_DeviceWS.DeviceWSSoap")]
     public interface DeviceWSSoap
     {
         
+        // CODEGEN: Generating message contract since element name GetAllDevicesResult from namespace http://homeautomation.org/ is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://homeautomation.org/GetAllDevices", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        SOAP_DeviceWS.ArrayOfXElement GetAllDevices();
+        SOAP_DeviceWS.GetAllDevicesResponse GetAllDevices(SOAP_DeviceWS.GetAllDevicesRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://homeautomation.org/GetAllDevices", ReplyAction="*")]
-        System.Threading.Tasks.Task<SOAP_DeviceWS.ArrayOfXElement> GetAllDevicesAsync();
+        System.Threading.Tasks.Task<SOAP_DeviceWS.GetAllDevicesResponse> GetAllDevicesAsync(SOAP_DeviceWS.GetAllDevicesRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://homeautomation.org/GetDeviceById", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        SOAP_DeviceWS.ArrayOfXElement GetDeviceById(int Id);
+        // CODEGEN: Generating message contract since element name GetDeviceByUserIdResult from namespace http://homeautomation.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://homeautomation.org/GetDeviceByUserId", ReplyAction="*")]
+        SOAP_DeviceWS.GetDeviceByUserIdResponse GetDeviceByUserId(SOAP_DeviceWS.GetDeviceByUserIdRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://homeautomation.org/GetDeviceById", ReplyAction="*")]
-        System.Threading.Tasks.Task<SOAP_DeviceWS.ArrayOfXElement> GetDeviceByIdAsync(int Id);
+        [System.ServiceModel.OperationContractAttribute(Action="http://homeautomation.org/GetDeviceByUserId", ReplyAction="*")]
+        System.Threading.Tasks.Task<SOAP_DeviceWS.GetDeviceByUserIdResponse> GetDeviceByUserIdAsync(SOAP_DeviceWS.GetDeviceByUserIdRequest request);
+        
+        // CODEGEN: Generating message contract since element name name from namespace http://homeautomation.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://homeautomation.org/InsertDevice", ReplyAction="*")]
+        SOAP_DeviceWS.InsertDeviceResponse InsertDevice(SOAP_DeviceWS.InsertDeviceRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://homeautomation.org/InsertDevice", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        int InsertDevice(int id, string name, bool state, double value, int houseId);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://homeautomation.org/InsertDevice", ReplyAction="*")]
-        System.Threading.Tasks.Task<int> InsertDeviceAsync(int id, string name, bool state, double value, int houseId);
+        System.Threading.Tasks.Task<SOAP_DeviceWS.InsertDeviceResponse> InsertDeviceAsync(SOAP_DeviceWS.InsertDeviceRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://homeautomation.org/UpdateDevice", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         int UpdateDevice(int id, double value);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://homeautomation.org/UpdateDevice", ReplyAction="*")]
         System.Threading.Tasks.Task<int> UpdateDeviceAsync(int id, double value);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://homeautomation.org/DeleteDevice", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         int DeleteDevice(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://homeautomation.org/DeleteDevice", ReplyAction="*")]
         System.Threading.Tasks.Task<int> DeleteDeviceAsync(int id);
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetAllDevicesRequest
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetAllDevices", Namespace="http://homeautomation.org/", Order=0)]
+        public SOAP_DeviceWS.GetAllDevicesRequestBody Body;
+        
+        public GetAllDevicesRequest()
+        {
+        }
+        
+        public GetAllDevicesRequest(SOAP_DeviceWS.GetAllDevicesRequestBody Body)
+        {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute()]
+    public partial class GetAllDevicesRequestBody
+    {
+        
+        public GetAllDevicesRequestBody()
+        {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetAllDevicesResponse
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetAllDevicesResponse", Namespace="http://homeautomation.org/", Order=0)]
+        public SOAP_DeviceWS.GetAllDevicesResponseBody Body;
+        
+        public GetAllDevicesResponse()
+        {
+        }
+        
+        public GetAllDevicesResponse(SOAP_DeviceWS.GetAllDevicesResponseBody Body)
+        {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://homeautomation.org/")]
+    public partial class GetAllDevicesResponseBody
+    {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public SOAP_DeviceWS.Device[] GetAllDevicesResult;
+        
+        public GetAllDevicesResponseBody()
+        {
+        }
+        
+        public GetAllDevicesResponseBody(SOAP_DeviceWS.Device[] GetAllDevicesResult)
+        {
+            this.GetAllDevicesResult = GetAllDevicesResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetDeviceByUserIdRequest
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetDeviceByUserId", Namespace="http://homeautomation.org/", Order=0)]
+        public SOAP_DeviceWS.GetDeviceByUserIdRequestBody Body;
+        
+        public GetDeviceByUserIdRequest()
+        {
+        }
+        
+        public GetDeviceByUserIdRequest(SOAP_DeviceWS.GetDeviceByUserIdRequestBody Body)
+        {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://homeautomation.org/")]
+    public partial class GetDeviceByUserIdRequestBody
+    {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public int userId;
+        
+        public GetDeviceByUserIdRequestBody()
+        {
+        }
+        
+        public GetDeviceByUserIdRequestBody(int userId)
+        {
+            this.userId = userId;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetDeviceByUserIdResponse
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetDeviceByUserIdResponse", Namespace="http://homeautomation.org/", Order=0)]
+        public SOAP_DeviceWS.GetDeviceByUserIdResponseBody Body;
+        
+        public GetDeviceByUserIdResponse()
+        {
+        }
+        
+        public GetDeviceByUserIdResponse(SOAP_DeviceWS.GetDeviceByUserIdResponseBody Body)
+        {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://homeautomation.org/")]
+    public partial class GetDeviceByUserIdResponseBody
+    {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public SOAP_DeviceWS.Device[] GetDeviceByUserIdResult;
+        
+        public GetDeviceByUserIdResponseBody()
+        {
+        }
+        
+        public GetDeviceByUserIdResponseBody(SOAP_DeviceWS.Device[] GetDeviceByUserIdResult)
+        {
+            this.GetDeviceByUserIdResult = GetDeviceByUserIdResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class InsertDeviceRequest
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="InsertDevice", Namespace="http://homeautomation.org/", Order=0)]
+        public SOAP_DeviceWS.InsertDeviceRequestBody Body;
+        
+        public InsertDeviceRequest()
+        {
+        }
+        
+        public InsertDeviceRequest(SOAP_DeviceWS.InsertDeviceRequestBody Body)
+        {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://homeautomation.org/")]
+    public partial class InsertDeviceRequestBody
+    {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string name;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=1)]
+        public System.Nullable<bool> state;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
+        public System.Nullable<double> value;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
+        public int houseId;
+        
+        public InsertDeviceRequestBody()
+        {
+        }
+        
+        public InsertDeviceRequestBody(string name, System.Nullable<bool> state, System.Nullable<double> value, int houseId)
+        {
+            this.name = name;
+            this.state = state;
+            this.value = value;
+            this.houseId = houseId;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class InsertDeviceResponse
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="InsertDeviceResponse", Namespace="http://homeautomation.org/", Order=0)]
+        public SOAP_DeviceWS.InsertDeviceResponseBody Body;
+        
+        public InsertDeviceResponse()
+        {
+        }
+        
+        public InsertDeviceResponse(SOAP_DeviceWS.InsertDeviceResponseBody Body)
+        {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://homeautomation.org/")]
+    public partial class InsertDeviceResponseBody
+    {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public int InsertDeviceResult;
+        
+        public InsertDeviceResponseBody()
+        {
+        }
+        
+        public InsertDeviceResponseBody(int InsertDeviceResult)
+        {
+            this.InsertDeviceResult = InsertDeviceResult;
+        }
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
@@ -94,39 +419,96 @@ namespace SOAP_DeviceWS
                 base(binding, remoteAddress)
         {
         }
-
-        public DeviceWSSoapClient()
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        SOAP_DeviceWS.GetAllDevicesResponse SOAP_DeviceWS.DeviceWSSoap.GetAllDevices(SOAP_DeviceWS.GetAllDevicesRequest request)
         {
-        }
-
-        public SOAP_DeviceWS.ArrayOfXElement GetAllDevices()
-        {
-            return base.Channel.GetAllDevices();
+            return base.Channel.GetAllDevices(request);
         }
         
-        public System.Threading.Tasks.Task<SOAP_DeviceWS.ArrayOfXElement> GetAllDevicesAsync()
+        public SOAP_DeviceWS.Device[] GetAllDevices()
         {
-            return base.Channel.GetAllDevicesAsync();
+            SOAP_DeviceWS.GetAllDevicesRequest inValue = new SOAP_DeviceWS.GetAllDevicesRequest();
+            inValue.Body = new SOAP_DeviceWS.GetAllDevicesRequestBody();
+            SOAP_DeviceWS.GetAllDevicesResponse retVal = ((SOAP_DeviceWS.DeviceWSSoap)(this)).GetAllDevices(inValue);
+            return retVal.Body.GetAllDevicesResult;
         }
         
-        public SOAP_DeviceWS.ArrayOfXElement GetDeviceById(int Id)
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<SOAP_DeviceWS.GetAllDevicesResponse> SOAP_DeviceWS.DeviceWSSoap.GetAllDevicesAsync(SOAP_DeviceWS.GetAllDevicesRequest request)
         {
-            return base.Channel.GetDeviceById(Id);
+            return base.Channel.GetAllDevicesAsync(request);
         }
         
-        public System.Threading.Tasks.Task<SOAP_DeviceWS.ArrayOfXElement> GetDeviceByIdAsync(int Id)
+        public System.Threading.Tasks.Task<SOAP_DeviceWS.GetAllDevicesResponse> GetAllDevicesAsync()
         {
-            return base.Channel.GetDeviceByIdAsync(Id);
+            SOAP_DeviceWS.GetAllDevicesRequest inValue = new SOAP_DeviceWS.GetAllDevicesRequest();
+            inValue.Body = new SOAP_DeviceWS.GetAllDevicesRequestBody();
+            return ((SOAP_DeviceWS.DeviceWSSoap)(this)).GetAllDevicesAsync(inValue);
         }
         
-        public int InsertDevice(int id, string name, bool state, double value, int houseId)
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        SOAP_DeviceWS.GetDeviceByUserIdResponse SOAP_DeviceWS.DeviceWSSoap.GetDeviceByUserId(SOAP_DeviceWS.GetDeviceByUserIdRequest request)
         {
-            return base.Channel.InsertDevice(id, name, state, value, houseId);
+            return base.Channel.GetDeviceByUserId(request);
         }
         
-        public System.Threading.Tasks.Task<int> InsertDeviceAsync(int id, string name, bool state, double value, int houseId)
+        public SOAP_DeviceWS.Device[] GetDeviceByUserId(int userId)
         {
-            return base.Channel.InsertDeviceAsync(id, name, state, value, houseId);
+            SOAP_DeviceWS.GetDeviceByUserIdRequest inValue = new SOAP_DeviceWS.GetDeviceByUserIdRequest();
+            inValue.Body = new SOAP_DeviceWS.GetDeviceByUserIdRequestBody();
+            inValue.Body.userId = userId;
+            SOAP_DeviceWS.GetDeviceByUserIdResponse retVal = ((SOAP_DeviceWS.DeviceWSSoap)(this)).GetDeviceByUserId(inValue);
+            return retVal.Body.GetDeviceByUserIdResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<SOAP_DeviceWS.GetDeviceByUserIdResponse> SOAP_DeviceWS.DeviceWSSoap.GetDeviceByUserIdAsync(SOAP_DeviceWS.GetDeviceByUserIdRequest request)
+        {
+            return base.Channel.GetDeviceByUserIdAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<SOAP_DeviceWS.GetDeviceByUserIdResponse> GetDeviceByUserIdAsync(int userId)
+        {
+            SOAP_DeviceWS.GetDeviceByUserIdRequest inValue = new SOAP_DeviceWS.GetDeviceByUserIdRequest();
+            inValue.Body = new SOAP_DeviceWS.GetDeviceByUserIdRequestBody();
+            inValue.Body.userId = userId;
+            return ((SOAP_DeviceWS.DeviceWSSoap)(this)).GetDeviceByUserIdAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        SOAP_DeviceWS.InsertDeviceResponse SOAP_DeviceWS.DeviceWSSoap.InsertDevice(SOAP_DeviceWS.InsertDeviceRequest request)
+        {
+            return base.Channel.InsertDevice(request);
+        }
+        
+        public int InsertDevice(string name, System.Nullable<bool> state, System.Nullable<double> value, int houseId)
+        {
+            SOAP_DeviceWS.InsertDeviceRequest inValue = new SOAP_DeviceWS.InsertDeviceRequest();
+            inValue.Body = new SOAP_DeviceWS.InsertDeviceRequestBody();
+            inValue.Body.name = name;
+            inValue.Body.state = state;
+            inValue.Body.value = value;
+            inValue.Body.houseId = houseId;
+            SOAP_DeviceWS.InsertDeviceResponse retVal = ((SOAP_DeviceWS.DeviceWSSoap)(this)).InsertDevice(inValue);
+            return retVal.Body.InsertDeviceResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<SOAP_DeviceWS.InsertDeviceResponse> SOAP_DeviceWS.DeviceWSSoap.InsertDeviceAsync(SOAP_DeviceWS.InsertDeviceRequest request)
+        {
+            return base.Channel.InsertDeviceAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<SOAP_DeviceWS.InsertDeviceResponse> InsertDeviceAsync(string name, System.Nullable<bool> state, System.Nullable<double> value, int houseId)
+        {
+            SOAP_DeviceWS.InsertDeviceRequest inValue = new SOAP_DeviceWS.InsertDeviceRequest();
+            inValue.Body = new SOAP_DeviceWS.InsertDeviceRequestBody();
+            inValue.Body.name = name;
+            inValue.Body.state = state;
+            inValue.Body.value = value;
+            inValue.Body.houseId = houseId;
+            return ((SOAP_DeviceWS.DeviceWSSoap)(this)).InsertDeviceAsync(inValue);
         }
         
         public int UpdateDevice(int id, double value)
@@ -201,61 +583,6 @@ namespace SOAP_DeviceWS
             DeviceWSSoap,
             
             DeviceWSSoap12,
-        }
-    }
-    
-    [System.Xml.Serialization.XmlSchemaProviderAttribute(null, IsAny=true)]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil-lib", "2.1.0.0")]
-    public partial class ArrayOfXElement : object, System.Xml.Serialization.IXmlSerializable
-    {
-        
-        private System.Collections.Generic.List<System.Xml.Linq.XElement> nodesList = new System.Collections.Generic.List<System.Xml.Linq.XElement>();
-        
-        public ArrayOfXElement()
-        {
-        }
-        
-        public virtual System.Collections.Generic.List<System.Xml.Linq.XElement> Nodes
-        {
-            get
-            {
-                return this.nodesList;
-            }
-        }
-        
-        public virtual System.Xml.Schema.XmlSchema GetSchema()
-        {
-            throw new System.NotImplementedException();
-        }
-        
-        public virtual void WriteXml(System.Xml.XmlWriter writer)
-        {
-            System.Collections.Generic.IEnumerator<System.Xml.Linq.XElement> e = nodesList.GetEnumerator();
-            for (
-            ; e.MoveNext(); 
-            )
-            {
-                ((System.Xml.Serialization.IXmlSerializable)(e.Current)).WriteXml(writer);
-            }
-        }
-        
-        public virtual void ReadXml(System.Xml.XmlReader reader)
-        {
-            for (
-            ; (reader.NodeType != System.Xml.XmlNodeType.EndElement); 
-            )
-            {
-                if ((reader.NodeType == System.Xml.XmlNodeType.Element))
-                {
-                    System.Xml.Linq.XElement elem = new System.Xml.Linq.XElement("default");
-                    ((System.Xml.Serialization.IXmlSerializable)(elem)).ReadXml(reader);
-                    Nodes.Add(elem);
-                }
-                else
-                {
-                    reader.Skip();
-                }
-            }
         }
     }
 }

@@ -1,6 +1,4 @@
-﻿using ISI.Models;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using SOAP_DeviceWS;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -10,12 +8,12 @@ namespace ISI.Controllers
     /// <summary>
     /// Controller for managing devices.
     /// </summary>
-    [Authorize]
+    //[Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class DevicesController : ControllerBase
     {
-        DeviceWSSoapClient _deviceWSClient = new DeviceWSSoapClient();
+        DeviceWSSoapClient _deviceWSClient = new DeviceWSSoapClient(new ());
 
         /// <summary>
         /// Gets all devices.
@@ -39,14 +37,14 @@ namespace ISI.Controllers
         /// <summary>
         /// Gets a device by its ID.
         /// </summary>
-        /// <param name="id">The ID of the device to retrieve.</param>
+        /// <param name="userId">The ID of the device to retrieve.</param>
         /// <returns>An ActionResult containing the device information.</returns>
-        [HttpGet("{id}")]
-        public IActionResult GetDeviceById(int id)
+        [HttpGet("{userId}")]
+        public IActionResult GetDeviceById(int userId)
         {
             try
             {
-                var device = _deviceWSClient.GetDeviceById(id);
+                var device = _deviceWSClient.GetDeviceByUserId(userId);
 
                 if (device != null)
                 {
@@ -54,7 +52,7 @@ namespace ISI.Controllers
                 }
                 else
                 {
-                    return NotFound($"Device with ID {id} not found");
+                    return NotFound($"Device with ID {userId} not found");
                 }
             }
             catch (Exception ex)
@@ -69,11 +67,11 @@ namespace ISI.Controllers
         /// <param name="device">The device information to insert.</param>
         /// <returns>An IActionResult indicating the result of the insertion.</returns>
         [HttpPost]
-        public IActionResult PostDevice([FromBody] Device device)
+        public IActionResult PostDevice([FromBody] Models.Device device)
         {
             try
             {
-                int rowsAffected = _deviceWSClient.InsertDevice(device.Id, device.Name, device.State, device.Value, device.HouseId);
+                int rowsAffected = _deviceWSClient.InsertDevice(device.Name, device.State, device.Value, device.HouseId);
 
                 if (rowsAffected > 0)
                 {
@@ -97,11 +95,13 @@ namespace ISI.Controllers
         /// <param name="device">The updated device information.</param>
         /// <returns>An IActionResult indicating the result of the update.</returns>
         [HttpPut("{id}")]
-        public IActionResult UpdateDevice(int id, [FromBody] Device device)
+        public IActionResult UpdateDevice(int id, [FromBody] Models.Device device)
         {
             try
             {
-                int rowsAffected = _deviceWSClient.UpdateDevice(device.Id, device.Value);
+                double value = (double)(device.Value is null ? 0.0 : device.Value);
+
+                int rowsAffected = _deviceWSClient.UpdateDevice(device.Id, value);
 
                 if (rowsAffected > 0)
                 {
