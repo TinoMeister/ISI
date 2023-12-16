@@ -23,7 +23,7 @@
         /// <summary>
         /// Device's Value
         /// </summary>
-        public double? Value { get; set; }
+        public double Value { get; set; }
 
         /// <summary>
         /// Room's Id
