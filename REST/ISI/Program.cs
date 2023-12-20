@@ -4,7 +4,9 @@ using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using System.Reflection;
 using System.Text;
+using System.Text.Encodings.Web;
 using System.Text.Json.Serialization;
+using static System.Net.WebRequestMethods;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,12 +15,24 @@ builder.Services.AddEndpointsApiExplorer();
 
 builder.Services.AddSwaggerGen(options =>
 {
-    options.SwaggerDoc("v1", new OpenApiInfo {
-        Version = "V1-2023",
-        Title = "ISI API",
+    options.SwaggerDoc("v1", new OpenApiInfo
+    {
+        Version = "V3.1",
+        Title = "ISI",
         Description = "ASP.NET Core Web API",
-
-    });
+        TermsOfService = new Uri("https://ipca.pt/sa/regulamentos-legislacao/"),
+        Contact = new OpenApiContact
+        {
+            Name = "ASP.NET Core Web API",
+            Email = "a16622@gmail.com, a23516@gmail.com, a23504@gmail.com",
+            Url = new Uri("https://ipca.pt/en"),
+        },
+        License = new OpenApiLicense
+        {
+            Name = "Use under IPCA rights",
+            Url = new Uri("https://ipca.pt/sa/regulamentos-legislacao/"),
+        },
+    }); 
 
     options.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
     {
@@ -27,7 +41,7 @@ builder.Services.AddSwaggerGen(options =>
         Name = "Authorization",
         Type = SecuritySchemeType.Http,
         BearerFormat = "JWT",
-        Scheme = "Bearer"
+        Scheme = "Bearer",
     });
 
     options.AddSecurityRequirement(new OpenApiSecurityRequirement

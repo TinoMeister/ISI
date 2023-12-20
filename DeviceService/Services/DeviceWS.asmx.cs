@@ -59,7 +59,6 @@ namespace DeviceService.Services
             }
             catch (Exception ex)
             {
-                // Handle exceptions appropriately (e.g., log or throw)
                 throw ex;
             }
 
@@ -114,7 +113,6 @@ namespace DeviceService.Services
             }
             catch (Exception ex)
             {
-                // Handle exceptions appropriately (e.g., log or throw)
                 throw ex;
             }
 
