@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
+using System.Threading.Tasks;
 using System.Web.Routing;
 using System.Web.Services;
 
@@ -120,7 +121,6 @@ namespace DeviceService.Services
             return devices;
         }
 
-
         [WebMethod(Description = "Inserts a new device into the Devices table.")]
         /// <summary>
         /// Inserts a new device into the Devices table.
@@ -154,6 +154,49 @@ namespace DeviceService.Services
                         cmd.Parameters.AddWithValue("@HouseId", houseId);
 
                         rowsAffected = cmd.ExecuteNonQuery();
+                    }
+                }
+                return rowsAffected;
+            }
+            catch (Exception)
+            {
+                return -1;
+            }
+        }
+
+        [WebMethod(Description = "Inserts a new device into the Devices table via Async.")]
+        /// <summary>
+        /// Inserts a new device into the Devices table.
+        /// </summary>
+        /// <param name="name">The name of the device.</param>
+        /// <param name="state">The state of the device.</param>
+        /// <param name="value">The value of the device.</param>
+        /// <param name="houseId">The ID of the house to which the device belongs.</param>
+        /// <returns>The number of rows affected by the insertion operation.</returns>
+        public async Task<int> InsertDeviceAsync(string name, bool? state, double? value, int houseId)
+        {
+            int rowsAffected = 0;
+            state = state is null ? false : state;
+            value = value is null ? 0 : value;
+
+            try
+            {
+                using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["DevicesConnectionString"].ConnectionString))
+                {
+                    con.Open();
+
+                    // parameterized queries for better security and to prevent SQL injection.
+                    string query = "INSERT INTO Devices(Name, State, Value, HouseId) " +
+                                   "VALUES(@Name, @State, @Value, @HouseId)";
+
+                    using (SqlCommand cmd = new SqlCommand(query, con))
+                    {
+                        cmd.Parameters.AddWithValue("@Name", name);
+                        cmd.Parameters.AddWithValue("@State", state);
+                        cmd.Parameters.AddWithValue("@Value", value);
+                        cmd.Parameters.AddWithValue("@HouseId", houseId);
+
+                        rowsAffected = await cmd.ExecuteNonQueryAsync();
                     }
                 }
                 return rowsAffected;
