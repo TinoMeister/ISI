@@ -23,7 +23,6 @@ namespace DeviceService.Services
         /// Retrieves all devices from the Devices table.
         /// </summary>
         /// <returns>A List containing all devices.</returns>
-        /// <remarks>
         public List<Device> GetAllDevices()
         {
             List<Device> devices = new List<Device>();
@@ -178,21 +177,7 @@ namespace DeviceService.Services
         /// <param name="value">The value of the device.</param>
         /// <param name="houseId">The ID of the house to which the device belongs.</param>
         /// <returns>The number of rows affected by the insertion operation.</returns>
-<<<<<<< HEAD
         public async Task<int> InsertDeviceAsync(string name, bool? state, double? value, int houseId)
-=======
-        /// <remarks>
-        /// Sample Request:
-        ///     POST /api/Devices
-        ///     {
-        ///         "name": "DeviceName",
-        ///         "state": true,
-        ///         "value": 20.5,
-        ///         "houseId": 1
-        ///     }
-        /// </remarks>
-        public async Task<int> InsertDeviceByAsync(string name, bool? state, double? value, int houseId)
->>>>>>> 437b8f5fe396dbf9c3de2a9e22b5abe7901f6da0
         {
             int rowsAffected = 0;
             state = state is null ? false : state;

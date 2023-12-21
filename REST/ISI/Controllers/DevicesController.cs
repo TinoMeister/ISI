@@ -149,6 +149,7 @@ namespace ISI.Controllers
         /// <returns>An IActionResult indicating the result of the insertion.</returns>
         /// <remarks>
         /// Sample Request:
+        /// 
         ///     POST /api/Devices/async
         ///     {
         ///         "id": 1,
@@ -157,15 +158,13 @@ namespace ISI.Controllers
         ///         "value": 30.0,
         ///         "houseId": 1
         ///     }
+        ///     
         /// </remarks>
-        /// <response code="200">Returns an IActionResult indicating the result of the insertion.</response>
-        /// <response code="400">If there was a parameter invalid</response>
-        /// <response code="401">Unauthorized access to execute the method.</response>
         [Authorize(Roles = "User")]
         [HttpPost("async")]
-        [ProducesResponseType(StatusCodes.Status200OK)]
-        [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        [SwaggerResponse(200, "Returns an IActionResult indicating the result of the insertion.")]
+        [SwaggerResponse(400, "If there was a parameter invalid.")]
+        [SwaggerResponse(401, "Unauthorized access to execute the method.")]
         public async Task<IActionResult> PostDeviceAsync([FromBody] Models.Device device)
         {
             try
