@@ -24,12 +24,6 @@ namespace DeviceService.Services
         /// </summary>
         /// <returns>A List containing all devices.</returns>
         /// <remarks>
-        /// Sample Request:
-        ///     GET /api/Devices
-        ///     {
-        ///         // No request body for this endpoint.
-        ///     }
-        /// </remarks>
         public List<Device> GetAllDevices()
         {
             List<Device> devices = new List<Device>();
@@ -80,13 +74,6 @@ namespace DeviceService.Services
         /// </summary>
         /// <param name="userId">The ID of the User to retrieve.</param>
         /// <returns>A List containing the device information.</returns>
-        /// <remarks>
-        /// Sample Request:
-        ///     GET /api/Devices/{userid}
-        ///     {
-        ///         "userId": 1
-        ///     }
-        /// </remarks>
         public List<Device> GetDeviceByUserId(int userId)
         {
             List<Device> devices = new List<Device>();
@@ -148,16 +135,6 @@ namespace DeviceService.Services
         /// <param name="value">The value of the device.</param>
         /// <param name="houseId">The ID of the house to which the device belongs.</param>
         /// <returns>The number of rows affected by the insertion operation.</returns>
-        /// <remarks>
-        /// Sample Request:
-        ///     POST /api/Devices
-        ///     {
-        ///         "name": "DeviceName",
-        ///         "state": true,
-        ///         "value": 20.5,
-        ///         "houseId": 1
-        ///     }
-        /// </remarks>
         public int InsertDevice(string name, bool? state, double? value, int houseId)
         {
             int rowsAffected = 0;
@@ -201,16 +178,6 @@ namespace DeviceService.Services
         /// <param name="value">The value of the device.</param>
         /// <param name="houseId">The ID of the house to which the device belongs.</param>
         /// <returns>The number of rows affected by the insertion operation.</returns>
-        /// <remarks>
-        /// Sample Request:
-        ///     POST /api/Devices
-        ///     {
-        ///         "name": "DeviceName",
-        ///         "state": true,
-        ///         "value": 20.5,
-        ///         "houseId": 1
-        ///     }
-        /// </remarks>
         public async Task<int> InsertDeviceAsync(string name, bool? state, double? value, int houseId)
         {
             int rowsAffected = 0;
@@ -256,14 +223,6 @@ namespace DeviceService.Services
         /// <param name="id">The id of the device to update.</param>
         /// <param name="value">The new value of the device.</param>
         /// <returns>The number of rows affected by the update operation.</returns>
-        /// <remarks>
-        /// Sample Request:
-        ///     PUT /api/Devices/{id}
-        ///     {
-        ///         "id": 1,
-        ///         "value": 30.0
-        ///     }
-        /// </remarks>
         public int UpdateDevice(int id, double value)
         {
             int rowsAffected = 0;
@@ -302,13 +261,6 @@ namespace DeviceService.Services
         /// </summary>
         /// <param name="id">The id of the devices to delete.</param>
         /// <returns>The number of rows affected by the delete operation.</returns>
-        /// <remarks>
-        /// Sample Request:
-        ///     DELETE /api/Devices/{id}
-        ///     {
-        ///         "id": 1
-        ///     }
-        /// </remarks>
         public int DeleteDevice(int id)
         {
             try

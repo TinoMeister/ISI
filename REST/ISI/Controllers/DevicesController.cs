@@ -23,13 +23,13 @@ namespace ISI.Controllers
         /// Gets all devices.
         /// </summary>
         /// <returns>An ActionResult containing a list of all devices.</returns>
-        /// <remarks>
+        /// <example>
         /// Sample Request:
         ///     GET /api/Devices
         ///     {
         ///         // No request body for this endpoint.
         ///     }
-        /// </remarks>
+        /// </example>
         /// <response code="200">Returns an ActionResult containing a list of all devices.</response>
         /// <response code="400">If the list is null</response>
         /// <response code="401">Unauthorized access to execute the method.</response>
@@ -57,13 +57,13 @@ namespace ISI.Controllers
         /// </summary>
         /// <param name="userId">The ID of the user to retrieve devices for.</param>
         /// <returns>An ActionResult containing the device information.</returns>
-        /// <remarks>
+        /// <example>
         /// Sample Request:
         ///     GET /api/Devices/{userId}
         ///     {
         ///         "userId": 1
         ///     }
-        /// </remarks>
+        /// </example>
         /// <response code="200">Returns an ActionResult containing the device information.</response>
         /// <response code="400">If the device is null</response>
         /// <response code="401">Unauthorized access to execute the method.</response>
@@ -102,7 +102,7 @@ namespace ISI.Controllers
         /// </summary>
         /// <param name="device">The device information to insert.</param>
         /// <returns>An IActionResult indicating the result of the insertion.</returns>
-        /// <remarks>
+        /// <example>
         /// Sample Request:
         ///     POST /api/Devices
         ///     {
@@ -112,7 +112,7 @@ namespace ISI.Controllers
         ///         "value": 30.0,
         ///         "houseId": 1
         ///     }
-        /// </remarks>
+        /// </example>
         /// <response code="200">Returns an IActionResult indicating the result of the insertion.</response>
         /// <response code="400">If there was a parameter invalid</response>
         /// <response code="401">Unauthorized access to execute the method.</response>
@@ -151,7 +151,7 @@ namespace ISI.Controllers
         /// <param name="id">The ID of the device to update.</param>
         /// <param name="device">The updated device information.</param>
         /// <returns>An IActionResult indicating the result of the update.</returns>
-        /// <remarks>
+        /// <example>
         /// Sample Request:
         ///     PUT /api/Devices/{id}
         ///     {
@@ -161,7 +161,7 @@ namespace ISI.Controllers
         ///         "value": 25.0,
         ///         "houseId": 1
         ///     }
-        /// </remarks>
+        /// </example>
         /// <response code="200">Returns an IActionResult indicating the result of the update.</response>
         /// <response code="400">If the device is null</response>
         /// <response code="401">Unauthorized access to execute the method.</response>
@@ -202,13 +202,13 @@ namespace ISI.Controllers
         /// </summary>
         /// <param name="id">The ID of the device to delete.</param>
         /// <returns>An IActionResult indicating the result of the deletion.</returns>
-        /// <remarks>
+        /// <example>
         /// Sample Request:
         ///     DELETE /api/Devices/{id}
         ///     {
         ///         "id": 1
         ///     }
-        /// </remarks>
+        /// </example>
         /// <response code="200">Returns an IActionResult indicating the result of the deletion.</response>
         /// <response code="400">If the device is null</response>
         /// <response code="401">Unauthorized access to execute the method.</response>

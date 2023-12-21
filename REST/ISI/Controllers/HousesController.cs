@@ -27,13 +27,13 @@ namespace ISI.Controllers
         /// Gets all the Houses
         /// </summary>
         /// <returns>An List of Houses</returns>
-        /// <remarks>
+        /// <example>
         /// Sample Request:
         ///     GET /api/Houses
         ///     {
         ///         // No request body for this endpoint.
         ///     }
-        /// </remarks>
+        /// </example>
         /// <response code="200">Returns an list of houses</response>
         /// <response code="400">If the list is null</response>
         /// <response code="401">No permission to execute the method</response>
@@ -51,7 +51,7 @@ namespace ISI.Controllers
         /// </summary>
         /// <param name="idUser">User's ID.</param>
         /// <returns>List of houses.</returns>
-        /// <remarks>
+        /// <example>
         /// Sample Request:
         ///     GET /api/Houses/{idUser}
         ///     {
@@ -59,7 +59,7 @@ namespace ISI.Controllers
         ///        "name": "HouseTest",
         ///        "userId": 1
         ///     }
-        /// </remarks>
+        /// </example>
         /// <response code="200">Returns a list of houses associated with a specific user.</response>
         /// <response code="400">If the list of houses is null.</response>
         /// <response code="401">Unauthorized access to execute the method.</response>
@@ -81,7 +81,7 @@ namespace ISI.Controllers
         /// </summary>
         /// <param name="house">The house object to be created.</param>
         /// <returns>ActionResult with appropriate HTTP status.</returns>
-        /// <remarks>
+        /// <example>
         /// Sample Request:
         ///     POST /api/Houses/{idUser}
         ///     {
@@ -89,7 +89,7 @@ namespace ISI.Controllers
         ///        "name": "HouseTest",
         ///        "userId": 1
         ///     }
-        /// </remarks>
+        /// </example>
         /// <response code="200">Returns a ActionResult with appropriate HTTP status.</response>
         /// <response code="400">If the input house is null or creation fails.</response>
         /// <response code="401">Unauthorized access to execute the method.</response>
@@ -118,7 +118,7 @@ namespace ISI.Controllers
         /// <param name="id">The ID of the house to update.</param>
         /// <param name="house">The updated house object.</param>
         /// <returns>ActionResult with appropriate HTTP status.</returns>
-        /// <remarks>
+        /// <example>
         /// Sample Request:
         ///     PUT /api/Houses/{id}
         ///     {
@@ -126,7 +126,7 @@ namespace ISI.Controllers
         ///        "name": "HouseTest",
         ///        "userId": 1
         ///     }
-        /// </remarks>
+        /// </example>
         /// <response code="200">Returns a list of houses.</response>
         /// <response code="400">If the input house is null or if IDs do not match.</response>
         /// <response code="401">Unauthorized access to execute the method.</response>
@@ -154,13 +154,13 @@ namespace ISI.Controllers
         /// </summary>
         /// <param name="id">The ID of the house to delete.</param>
         /// <returns>ActionResult with appropriate HTTP status.</returns>
-        /// <remarks>
+        /// <example>
         /// Sample Request:
         ///     DELETE /api/Houses/{id}
         ///     {
         ///        "id": 1
         ///     }
-        /// </remarks>
+        /// </example>
         /// <response code="200">Returns a list of houses.</response>
         /// <response code="400">If the list is null or deletion fails.</response>
         /// <response code="401">Unauthorized access to execute the method.</response>

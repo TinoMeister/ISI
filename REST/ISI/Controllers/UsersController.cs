@@ -27,14 +27,14 @@ namespace ISI.Controllers
         /// </summary>
         /// <param name="request">Authentication Request.</param>
         /// <returns>Token.</returns>
-        /// <remarks>
+        /// <example>
         /// Sample Request:
         ///     POST /api/Users/Login
         ///     {
         ///        "email": "aluno@alunos.ipca.pt",
         ///        "password": "aluno1234"
         ///     }
-        /// </remarks>
+        /// </example>
         /// <response code="200">Returns a token.</response>
         /// <response code="400">If the credentials are invalid.</response>
         [HttpPost("Login")]
@@ -63,7 +63,7 @@ namespace ISI.Controllers
         /// </summary>
         /// <param name="request">Registration Request.</param>
         /// <returns>Token.</returns>
-        /// <remarks>
+        /// <example>
         /// Sample Request:
         ///     POST /api/Users/Register
         ///     {
@@ -73,7 +73,7 @@ namespace ISI.Controllers
         ///        "password": "lesi1234"
         ///        "role": "User"
         ///     }
-        /// </remarks>
+        /// </example>
         /// <response code="200">Returns a token.</response>
         /// <response code="400">If the email already exists or if the user creation fails.</response>
         [HttpPost("Register")]
