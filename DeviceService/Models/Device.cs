@@ -1,4 +1,6 @@
-﻿namespace DeviceService.Models
+﻿using System.ComponentModel;
+
+namespace DeviceService.Models
 {
     /// <summary>
     /// This class represents a Device
@@ -15,10 +17,11 @@
         /// </summary>
         public string Name { get; set; } = null;
 
+        [DefaultValue(false)]
         /// <summary>
         /// Device's State
         /// </summary>
-        public bool? State { get; set; } = false;
+        public bool? State { get; set; }
 
         /// <summary>
         /// Device's Value

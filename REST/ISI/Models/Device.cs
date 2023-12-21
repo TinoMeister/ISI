@@ -1,4 +1,6 @@
-﻿namespace ISI.Models
+﻿using System.ComponentModel;
+
+namespace ISI.Models
 {
     /// <summary>
     /// This class represents a Device
@@ -15,6 +17,7 @@
         /// </summary>
         public string Name { get; set; } = null!;
 
+        [DefaultValue(false)]
         /// <summary>
         /// Device's State
         /// </summary>

@@ -17,12 +17,27 @@ namespace ISI.Controllers
         // Create an instance of the SOAP client for DeviceWS
         DeviceWSSoapClient _deviceWSClient = new DeviceWSSoapClient(new ());
 
+        #region GET
+
         /// <summary>
         /// Gets all devices.
         /// </summary>
         /// <returns>An ActionResult containing a list of all devices.</returns>
+        /// <remarks>
+        /// Sample Request:
+        ///     GET /api/Devices
+        ///     {
+        ///         // No request body for this endpoint.
+        ///     }
+        /// </remarks>
+        /// <response code="200">Returns an ActionResult containing a list of all devices.</response>
+        /// <response code="400">If the list is null</response>
+        /// <response code="401">Unauthorized access to execute the method.</response>
         [Authorize(Roles = "Esp")]
         [HttpGet]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
         public IActionResult GetAllDevices()
         {
             try
@@ -40,10 +55,23 @@ namespace ISI.Controllers
         /// <summary>
         /// Gets all device by the given userId.
         /// </summary>
-        /// <param name="userId">The ID of the device to retrieve.</param>
+        /// <param name="userId">The ID of the user to retrieve devices for.</param>
         /// <returns>An ActionResult containing the device information.</returns>
+        /// <remarks>
+        /// Sample Request:
+        ///     GET /api/Devices/{userId}
+        ///     {
+        ///         "userId": 1
+        ///     }
+        /// </remarks>
+        /// <response code="200">Returns an ActionResult containing the device information.</response>
+        /// <response code="400">If the device is null</response>
+        /// <response code="401">Unauthorized access to execute the method.</response>
         [Authorize(Roles = "Esp, User")]
         [HttpGet("{userId}")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
         public IActionResult GetDeviceById(int userId)
         {
             try
@@ -65,13 +93,34 @@ namespace ISI.Controllers
             }
         }
 
+        #endregion
+
+        #region POST
+
         /// <summary>
         /// Inserts a new device.
         /// </summary>
         /// <param name="device">The device information to insert.</param>
         /// <returns>An IActionResult indicating the result of the insertion.</returns>
+        /// <remarks>
+        /// Sample Request:
+        ///     POST /api/Devices
+        ///     {
+        ///         "id": 1,
+        ///         "name": "Devicetest",
+        ///         "state": false,
+        ///         "value": 30.0,
+        ///         "houseId": 1
+        ///     }
+        /// </remarks>
+        /// <response code="200">Returns an IActionResult indicating the result of the insertion.</response>
+        /// <response code="400">If there was a parameter invalid</response>
+        /// <response code="401">Unauthorized access to execute the method.</response>
         [Authorize(Roles = "User")]
         [HttpPost]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
         public IActionResult PostDevice([FromBody] Models.Device device)
         {
             try
@@ -92,6 +141,9 @@ namespace ISI.Controllers
                 return StatusCode(500, $"Internal server error: {ex.Message}");
             }
         }
+        #endregion
+
+        #region PUT
 
         /// <summary>
         /// Updates a device by its ID.
@@ -99,8 +151,25 @@ namespace ISI.Controllers
         /// <param name="id">The ID of the device to update.</param>
         /// <param name="device">The updated device information.</param>
         /// <returns>An IActionResult indicating the result of the update.</returns>
+        /// <remarks>
+        /// Sample Request:
+        ///     PUT /api/Devices/{id}
+        ///     {
+        ///         "id": 1,
+        ///         "name": "test",
+        ///         "state": false,
+        ///         "value": 25.0,
+        ///         "houseId": 1
+        ///     }
+        /// </remarks>
+        /// <response code="200">Returns an IActionResult indicating the result of the update.</response>
+        /// <response code="400">If the device is null</response>
+        /// <response code="401">Unauthorized access to execute the method.</response>
         [Authorize(Roles = "User")]
         [HttpPut("{id}")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
         public IActionResult UpdateDevice(int id, [FromBody] Models.Device device)
         {
             try
@@ -124,13 +193,30 @@ namespace ISI.Controllers
             }
         }
 
+        #endregion
+
+        #region DELETE
+
         /// <summary>
         /// Deletes a device by its ID.
         /// </summary>
         /// <param name="id">The ID of the device to delete.</param>
         /// <returns>An IActionResult indicating the result of the deletion.</returns>
+        /// <remarks>
+        /// Sample Request:
+        ///     DELETE /api/Devices/{id}
+        ///     {
+        ///         "id": 1
+        ///     }
+        /// </remarks>
+        /// <response code="200">Returns an IActionResult indicating the result of the deletion.</response>
+        /// <response code="400">If the device is null</response>
+        /// <response code="401">Unauthorized access to execute the method.</response>
         [Authorize(Roles = "User")]
         [HttpDelete("{id}")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
         public IActionResult DeleteDevice(int id)
         {
             try
@@ -151,5 +237,7 @@ namespace ISI.Controllers
                 return StatusCode(500, $"Internal server error: {ex.Message}");
             }
         }
+
+        #endregion
     }
 }

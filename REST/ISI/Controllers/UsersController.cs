@@ -21,11 +21,23 @@ namespace ISI.Controllers
         }
 
         /// <summary>
-        /// This Method Authenticate the User
+        /// Authenticates the User.
         /// </summary>
-        /// <param name="request">Authentication Request</param>
-        /// <returns>Token</returns>
+        /// <param name="request">Authentication Request.</param>
+        /// <returns>Token.</returns>
+        /// <remarks>
+        /// Sample Request:
+        ///     POST /api/Users/Login
+        ///     {
+        ///        "email": "aluno@alunos.ipca.pt",
+        ///        "password": "aluno1234"
+        ///     }
+        /// </remarks>
+        /// <response code="200">Returns a token.</response>
+        /// <response code="400">If the credentials are invalid.</response>
         [HttpPost("Login")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public ActionResult<AuthResponse> Authenticate(AuthRequest request)
         {
             // Get user by email
@@ -45,11 +57,26 @@ namespace ISI.Controllers
         }
 
         /// <summary>
-        /// This Method Creates a new User
+        /// Creates a new User.
         /// </summary>
-        /// <param name="request">Registration Request</param>
-        /// <returns>Token</returns>
+        /// <param name="request">Registration Request.</param>
+        /// <returns>Token.</returns>
+        /// <remarks>
+        /// Sample Request:
+        ///     POST /api/Users/Register
+        ///     {
+        ///        "name": "aluno",
+        ///        "email": "aluno@alunos.ipca.pt",
+        ///        "username": "alunodelesi"
+        ///        "password": "lesi1234"
+        ///        "role": "User"
+        ///     }
+        /// </remarks>
+        /// <response code="200">Returns a token.</response>
+        /// <response code="400">If the email already exists or if the user creation fails.</response>
         [HttpPost("Register")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public ActionResult<AuthResponse> PostUser(RegistrationRequest request)
         {
             // If the Email alredy exists return BadRequest
