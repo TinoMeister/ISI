@@ -2,9 +2,11 @@
 using ISI.Models;
 using ISI.Services;
 using Microsoft.AspNetCore.Mvc;
+using Swashbuckle.AspNetCore.Annotations;
 
 namespace ISI.Controllers
 {
+    [SwaggerTag("Authentication and Autorization of Users")]
     [Route("api/[controller]")]
     [ApiController]
     public class UsersController : ControllerBase
@@ -27,19 +29,19 @@ namespace ISI.Controllers
         /// </summary>
         /// <param name="request">Authentication Request.</param>
         /// <returns>Token.</returns>
-        /// <example>
+        /// <remarks>
         /// Sample Request:
+        /// 
         ///     POST /api/Users/Login
         ///     {
         ///        "email": "aluno@alunos.ipca.pt",
         ///        "password": "aluno1234"
         ///     }
-        /// </example>
-        /// <response code="200">Returns a token.</response>
-        /// <response code="400">If the credentials are invalid.</response>
+        ///     
+        /// </remarks>
         [HttpPost("Login")]
-        [ProducesResponseType(StatusCodes.Status200OK)]
-        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [SwaggerResponse(200, "Returns a token.")]
+        [SwaggerResponse(400, "If the credentials are invalid.")]
         public ActionResult<AuthResponse> Authenticate(AuthRequest request)
         {
             // Get user by email
@@ -63,8 +65,9 @@ namespace ISI.Controllers
         /// </summary>
         /// <param name="request">Registration Request.</param>
         /// <returns>Token.</returns>
-        /// <example>
+        /// <remarks>
         /// Sample Request:
+        /// 
         ///     POST /api/Users/Register
         ///     {
         ///        "name": "aluno",
@@ -73,12 +76,11 @@ namespace ISI.Controllers
         ///        "password": "lesi1234"
         ///        "role": "User"
         ///     }
-        /// </example>
-        /// <response code="200">Returns a token.</response>
-        /// <response code="400">If the email already exists or if the user creation fails.</response>
+        ///     
+        /// </remarks>
         [HttpPost("Register")]
-        [ProducesResponseType(StatusCodes.Status200OK)]
-        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [SwaggerResponse(200, "Returns a token.")]
+        [SwaggerResponse(400, "If the email already exists or if the user creation fails.")]
         public ActionResult<AuthResponse> PostUser(RegistrationRequest request)
         {
             // If the Email alredy exists return BadRequest

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "44oEkoQ8/t7UvxYA1GJHQn2jYo0gQzRjKngP1ijhsvoEteTSp8AgzNQxjZS0Z879tSMugkW/5+ZokP0kwaPyDQ==",
+  "dgSpecHash": "mankejWetfagorkqKw3YToPlovpvv1/Xo+XYu5io6WWpCko5mkjMdZ6m7EY2H/E8u30KcQVjp99b40Mt7SaZBw==",
   "success": true,
   "projectFilePath": "C:\\Users\\arant\\Desktop\\LESI\\3-1\\ISI\\ISI\\REST\\ISI\\ISI.csproj",
   "expectedPackageFiles": [
@@ -26,6 +26,7 @@
     "C:\\Users\\arant\\.nuget\\packages\\runtime.win-x64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-x64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
     "C:\\Users\\arant\\.nuget\\packages\\runtime.win-x86.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-x86.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
     "C:\\Users\\arant\\.nuget\\packages\\swashbuckle.aspnetcore\\6.5.0\\swashbuckle.aspnetcore.6.5.0.nupkg.sha512",
+    "C:\\Users\\arant\\.nuget\\packages\\swashbuckle.aspnetcore.annotations\\6.5.0\\swashbuckle.aspnetcore.annotations.6.5.0.nupkg.sha512",
     "C:\\Users\\arant\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.5.0\\swashbuckle.aspnetcore.swagger.6.5.0.nupkg.sha512",
     "C:\\Users\\arant\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.5.0\\swashbuckle.aspnetcore.swaggergen.6.5.0.nupkg.sha512",
     "C:\\Users\\arant\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.5.0\\swashbuckle.aspnetcore.swaggerui.6.5.0.nupkg.sha512",

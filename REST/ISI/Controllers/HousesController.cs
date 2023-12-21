@@ -4,9 +4,11 @@ using ISI.Models;
 using ISI.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Swashbuckle.AspNetCore.Annotations;
 
 namespace ISI.Controllers
 {
+    [SwaggerTag("Create, read, update and delete of Houses")]
     [Authorize(Roles = "User")]
     [Route("api/[controller]")]
     [ApiController]
@@ -27,20 +29,19 @@ namespace ISI.Controllers
         /// Gets all the Houses
         /// </summary>
         /// <returns>An List of Houses</returns>
-        /// <example>
+        /// <remarks>
         /// Sample Request:
+        /// 
         ///     GET /api/Houses
         ///     {
         ///         // No request body for this endpoint.
         ///     }
-        /// </example>
-        /// <response code="200">Returns an list of houses</response>
-        /// <response code="400">If the list is null</response>
-        /// <response code="401">No permission to execute the method</response>
+        ///     
+        /// </remarks>
         [HttpGet]
-        [ProducesResponseType(StatusCodes.Status200OK)]
-        [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        [SwaggerResponse(200, "Returns an list of houses.")]
+        [SwaggerResponse(400, "If the list is null.")]
+        [SwaggerResponse(401, "No permission to execute the method.")]
         public IEnumerable<House> Get()
         {
             return _repository.GetAllHouses();
@@ -51,22 +52,21 @@ namespace ISI.Controllers
         /// </summary>
         /// <param name="idUser">User's ID.</param>
         /// <returns>List of houses.</returns>
-        /// <example>
+        /// <remarks>
         /// Sample Request:
+        /// 
         ///     GET /api/Houses/{idUser}
         ///     {
         ///        "id": 1,
         ///        "name": "HouseTest",
         ///        "userId": 1
         ///     }
-        /// </example>
-        /// <response code="200">Returns a list of houses associated with a specific user.</response>
-        /// <response code="400">If the list of houses is null.</response>
-        /// <response code="401">Unauthorized access to execute the method.</response>
+        ///     
+        /// </remarks>
         [HttpGet("{idUser}")]
-        [ProducesResponseType(StatusCodes.Status200OK)]
-        [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        [SwaggerResponse(200, "Returns a list of houses associated with a specific user.")]
+        [SwaggerResponse(400, "If the list of houses is null.")]
+        [SwaggerResponse(401, "Unauthorized access to execute the method.")]
         public IEnumerable<House> Get(int idUser)
         {
             return _repository.GetHousesByUser(idUser);
@@ -81,22 +81,21 @@ namespace ISI.Controllers
         /// </summary>
         /// <param name="house">The house object to be created.</param>
         /// <returns>ActionResult with appropriate HTTP status.</returns>
-        /// <example>
+        /// <remarks>
         /// Sample Request:
+        /// 
         ///     POST /api/Houses/{idUser}
         ///     {
         ///        "id": 1,
         ///        "name": "HouseTest",
         ///        "userId": 1
         ///     }
-        /// </example>
-        /// <response code="200">Returns a ActionResult with appropriate HTTP status.</response>
-        /// <response code="400">If the input house is null or creation fails.</response>
-        /// <response code="401">Unauthorized access to execute the method.</response>
+        ///     
+        /// </remarks>
         [HttpPost]
-        [ProducesResponseType(StatusCodes.Status200OK)]
-        [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        [SwaggerResponse(200, "Returns a ActionResult with appropriate HTTP status.")]
+        [SwaggerResponse(400, "If the input house is null or creation fails.")]
+        [SwaggerResponse(401, "Unauthorized access to execute the method.")]
         public ActionResult Post([FromBody] House house)
         {
             // Verify if the house is null
@@ -118,22 +117,21 @@ namespace ISI.Controllers
         /// <param name="id">The ID of the house to update.</param>
         /// <param name="house">The updated house object.</param>
         /// <returns>ActionResult with appropriate HTTP status.</returns>
-        /// <example>
+        /// <remarks>
         /// Sample Request:
+        /// 
         ///     PUT /api/Houses/{id}
         ///     {
         ///        "id": 1,
         ///        "name": "HouseTest",
         ///        "userId": 1
         ///     }
-        /// </example>
-        /// <response code="200">Returns a list of houses.</response>
-        /// <response code="400">If the input house is null or if IDs do not match.</response>
-        /// <response code="401">Unauthorized access to execute the method.</response>
+        ///     
+        /// </remarks>
         [HttpPut("{id}")]
-        [ProducesResponseType(StatusCodes.Status200OK)]
-        [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        [SwaggerResponse(200, "Returns a list of houses.")]
+        [SwaggerResponse(400, "If the input house is null or if IDs do not match.")]
+        [SwaggerResponse(401, "Unauthorized access to execute the method.")]
         public ActionResult Put(int id, [FromBody] House house)
         {
             // Verify if the house is null and if the IDs are equal
@@ -154,20 +152,19 @@ namespace ISI.Controllers
         /// </summary>
         /// <param name="id">The ID of the house to delete.</param>
         /// <returns>ActionResult with appropriate HTTP status.</returns>
-        /// <example>
+        /// <remarks>
         /// Sample Request:
+        /// 
         ///     DELETE /api/Houses/{id}
         ///     {
         ///        "id": 1
         ///     }
-        /// </example>
-        /// <response code="200">Returns a list of houses.</response>
-        /// <response code="400">If the list is null or deletion fails.</response>
-        /// <response code="401">Unauthorized access to execute the method.</response>
+        ///     
+        /// </remarks>
         [HttpDelete("{id}")]
-        [ProducesResponseType(StatusCodes.Status200OK)]
-        [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        [SwaggerResponse(200, "Returns a list of houses.")]
+        [SwaggerResponse(400, "If the list is null or deletion fails.")]
+        [SwaggerResponse(401, "Unauthorized access to execute the method.")]
         public ActionResult Delete(int id)
         {
             // Try to delete
