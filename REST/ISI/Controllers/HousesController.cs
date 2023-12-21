@@ -24,7 +24,7 @@ namespace ISI.Controllers
         #region GET
 
         /// <summary>
-        /// This Method Gets all the Houses
+        /// Gets all the Houses
         /// </summary>
         /// <returns>An List of Houses</returns>
         /// <remarks>
