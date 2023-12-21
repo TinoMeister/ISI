@@ -16,6 +16,7 @@
             <returns>An ActionResult containing a list of all devices.</returns>
             <remarks>
             Sample Request:
+<<<<<<< HEAD
                 
                 GET /api/Devices
                 {
@@ -23,6 +24,16 @@
                 }
                 
             </remarks>
+=======
+                GET /api/Devices
+                {
+                    // No request body for this endpoint.
+                }
+            </remarks>
+            <response code="200">Returns an ActionResult containing a list of all devices.</response>
+            <response code="400">If the list is null</response>
+            <response code="401">Unauthorized access to execute the method.</response>
+>>>>>>> 437b8f5fe396dbf9c3de2a9e22b5abe7901f6da0
         </member>
         <member name="M:ISI.Controllers.DevicesController.GetDeviceById(System.Int32)">
             <summary>
@@ -32,13 +43,23 @@
             <returns>An ActionResult containing the device information.</returns>
             <remarks>
             Sample Request:
+<<<<<<< HEAD
             
+=======
+>>>>>>> 437b8f5fe396dbf9c3de2a9e22b5abe7901f6da0
                 GET /api/Devices/{userId}
                 {
                     "userId": 1
                 }
+<<<<<<< HEAD
                 
             </remarks>
+=======
+            </remarks>
+            <response code="200">Returns an ActionResult containing the device information.</response>
+            <response code="400">If the device is null</response>
+            <response code="401">Unauthorized access to execute the method.</response>
+>>>>>>> 437b8f5fe396dbf9c3de2a9e22b5abe7901f6da0
         </member>
         <member name="M:ISI.Controllers.DevicesController.PostDevice(ISI.Models.Device)">
             <summary>
@@ -48,7 +69,10 @@
             <returns>An IActionResult indicating the result of the insertion.</returns>
             <remarks>
             Sample Request:
+<<<<<<< HEAD
             
+=======
+>>>>>>> 437b8f5fe396dbf9c3de2a9e22b5abe7901f6da0
                 POST /api/Devices
                 {
                     "id": 1,
@@ -57,8 +81,36 @@
                     "value": 30.0,
                     "houseId": 1
                 }
+<<<<<<< HEAD
                 
             </remarks>
+=======
+            </remarks>
+            <response code="200">Returns an IActionResult indicating the result of the insertion.</response>
+            <response code="400">If there was a parameter invalid</response>
+            <response code="401">Unauthorized access to execute the method.</response>
+        </member>
+        <member name="M:ISI.Controllers.DevicesController.PostDeviceAsync(ISI.Models.Device)">
+            <summary>
+            Inserts a new device via Async.
+            </summary>
+            <param name="device">The device information to insert.</param>
+            <returns>An IActionResult indicating the result of the insertion.</returns>
+            <remarks>
+            Sample Request:
+                POST /api/Devices/async
+                {
+                    "id": 1,
+                    "name": "Devicetest",
+                    "state": false,
+                    "value": 30.0,
+                    "houseId": 1
+                }
+            </remarks>
+            <response code="200">Returns an IActionResult indicating the result of the insertion.</response>
+            <response code="400">If there was a parameter invalid</response>
+            <response code="401">Unauthorized access to execute the method.</response>
+>>>>>>> 437b8f5fe396dbf9c3de2a9e22b5abe7901f6da0
         </member>
         <member name="M:ISI.Controllers.DevicesController.UpdateDevice(System.Int32,ISI.Models.Device)">
             <summary>
@@ -69,7 +121,10 @@
             <returns>An IActionResult indicating the result of the update.</returns>
             <remarks>
             Sample Request:
+<<<<<<< HEAD
             
+=======
+>>>>>>> 437b8f5fe396dbf9c3de2a9e22b5abe7901f6da0
                 PUT /api/Devices/{id}
                 {
                     "id": 1,
@@ -78,8 +133,15 @@
                     "value": 25.0,
                     "houseId": 1
                 }
+<<<<<<< HEAD
                 
             </remarks>
+=======
+            </remarks>
+            <response code="200">Returns an IActionResult indicating the result of the update.</response>
+            <response code="400">If the device is null</response>
+            <response code="401">Unauthorized access to execute the method.</response>
+>>>>>>> 437b8f5fe396dbf9c3de2a9e22b5abe7901f6da0
         </member>
         <member name="M:ISI.Controllers.DevicesController.DeleteDevice(System.Int32)">
             <summary>
@@ -89,13 +151,23 @@
             <returns>An IActionResult indicating the result of the deletion.</returns>
             <remarks>
             Sample Request:
+<<<<<<< HEAD
             
+=======
+>>>>>>> 437b8f5fe396dbf9c3de2a9e22b5abe7901f6da0
                 DELETE /api/Devices/{id}
                 {
                     "id": 1
                 }
+<<<<<<< HEAD
                 
             </remarks>
+=======
+            </remarks>
+            <response code="200">Returns an IActionResult indicating the result of the deletion.</response>
+            <response code="400">If the device is null</response>
+            <response code="401">Unauthorized access to execute the method.</response>
+>>>>>>> 437b8f5fe396dbf9c3de2a9e22b5abe7901f6da0
         </member>
         <member name="M:ISI.Controllers.HousesController.Get">
             <summary>
@@ -104,13 +176,23 @@
             <returns>An List of Houses</returns>
             <remarks>
             Sample Request:
+<<<<<<< HEAD
             
+=======
+>>>>>>> 437b8f5fe396dbf9c3de2a9e22b5abe7901f6da0
                 GET /api/Houses
                 {
                     // No request body for this endpoint.
                 }
+<<<<<<< HEAD
                 
             </remarks>
+=======
+            </remarks>
+            <response code="200">Returns an list of houses</response>
+            <response code="400">If the list is null</response>
+            <response code="401">No permission to execute the method</response>
+>>>>>>> 437b8f5fe396dbf9c3de2a9e22b5abe7901f6da0
         </member>
         <member name="M:ISI.Controllers.HousesController.Get(System.Int32)">
             <summary>
@@ -120,15 +202,25 @@
             <returns>List of houses.</returns>
             <remarks>
             Sample Request:
+<<<<<<< HEAD
             
+=======
+>>>>>>> 437b8f5fe396dbf9c3de2a9e22b5abe7901f6da0
                 GET /api/Houses/{idUser}
                 {
                    "id": 1,
                    "name": "HouseTest",
                    "userId": 1
                 }
+<<<<<<< HEAD
                 
             </remarks>
+=======
+            </remarks>
+            <response code="200">Returns a list of houses associated with a specific user.</response>
+            <response code="400">If the list of houses is null.</response>
+            <response code="401">Unauthorized access to execute the method.</response>
+>>>>>>> 437b8f5fe396dbf9c3de2a9e22b5abe7901f6da0
         </member>
         <member name="M:ISI.Controllers.HousesController.Post(ISI.Models.House)">
             <summary>
@@ -138,15 +230,25 @@
             <returns>ActionResult with appropriate HTTP status.</returns>
             <remarks>
             Sample Request:
+<<<<<<< HEAD
             
+=======
+>>>>>>> 437b8f5fe396dbf9c3de2a9e22b5abe7901f6da0
                 POST /api/Houses/{idUser}
                 {
                    "id": 1,
                    "name": "HouseTest",
                    "userId": 1
                 }
+<<<<<<< HEAD
                 
             </remarks>
+=======
+            </remarks>
+            <response code="200">Returns a ActionResult with appropriate HTTP status.</response>
+            <response code="400">If the input house is null or creation fails.</response>
+            <response code="401">Unauthorized access to execute the method.</response>
+>>>>>>> 437b8f5fe396dbf9c3de2a9e22b5abe7901f6da0
         </member>
         <member name="M:ISI.Controllers.HousesController.Put(System.Int32,ISI.Models.House)">
             <summary>
@@ -157,15 +259,25 @@
             <returns>ActionResult with appropriate HTTP status.</returns>
             <remarks>
             Sample Request:
+<<<<<<< HEAD
             
+=======
+>>>>>>> 437b8f5fe396dbf9c3de2a9e22b5abe7901f6da0
                 PUT /api/Houses/{id}
                 {
                    "id": 1,
                    "name": "HouseTest",
                    "userId": 1
                 }
+<<<<<<< HEAD
                 
             </remarks>
+=======
+            </remarks>
+            <response code="200">Returns a list of houses.</response>
+            <response code="400">If the input house is null or if IDs do not match.</response>
+            <response code="401">Unauthorized access to execute the method.</response>
+>>>>>>> 437b8f5fe396dbf9c3de2a9e22b5abe7901f6da0
         </member>
         <member name="M:ISI.Controllers.HousesController.Delete(System.Int32)">
             <summary>
@@ -175,13 +287,23 @@
             <returns>ActionResult with appropriate HTTP status.</returns>
             <remarks>
             Sample Request:
+<<<<<<< HEAD
             
+=======
+>>>>>>> 437b8f5fe396dbf9c3de2a9e22b5abe7901f6da0
                 DELETE /api/Houses/{id}
                 {
                    "id": 1
                 }
+<<<<<<< HEAD
                 
             </remarks>
+=======
+            </remarks>
+            <response code="200">Returns a list of houses.</response>
+            <response code="400">If the list is null or deletion fails.</response>
+            <response code="401">Unauthorized access to execute the method.</response>
+>>>>>>> 437b8f5fe396dbf9c3de2a9e22b5abe7901f6da0
         </member>
         <member name="M:ISI.Controllers.UsersController.Authenticate(ISI.Models.AuthRequest)">
             <summary>
@@ -191,14 +313,23 @@
             <returns>Token.</returns>
             <remarks>
             Sample Request:
+<<<<<<< HEAD
             
+=======
+>>>>>>> 437b8f5fe396dbf9c3de2a9e22b5abe7901f6da0
                 POST /api/Users/Login
                 {
                    "email": "aluno@alunos.ipca.pt",
                    "password": "aluno1234"
                 }
+<<<<<<< HEAD
                 
             </remarks>
+=======
+            </remarks>
+            <response code="200">Returns a token.</response>
+            <response code="400">If the credentials are invalid.</response>
+>>>>>>> 437b8f5fe396dbf9c3de2a9e22b5abe7901f6da0
         </member>
         <member name="M:ISI.Controllers.UsersController.PostUser(ISI.Models.RegistrationRequest)">
             <summary>
@@ -208,7 +339,10 @@
             <returns>Token.</returns>
             <remarks>
             Sample Request:
+<<<<<<< HEAD
             
+=======
+>>>>>>> 437b8f5fe396dbf9c3de2a9e22b5abe7901f6da0
                 POST /api/Users/Register
                 {
                    "name": "aluno",
@@ -217,8 +351,14 @@
                    "password": "lesi1234"
                    "role": "User"
                 }
+<<<<<<< HEAD
                 
             </remarks>
+=======
+            </remarks>
+            <response code="200">Returns a token.</response>
+            <response code="400">If the email already exists or if the user creation fails.</response>
+>>>>>>> 437b8f5fe396dbf9c3de2a9e22b5abe7901f6da0
         </member>
         <member name="T:ISI.Data.HouseRepositoryDB">
             <summary>

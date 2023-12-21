@@ -94,6 +94,21 @@ namespace DeviceReference
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Task", Namespace="http://homeautomation.org/")]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(DeviceReference.TaskOfInt32))]
+    public partial class Task : object
+    {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="TaskOfInt32", Namespace="http://homeautomation.org/")]
+    public partial class TaskOfInt32 : DeviceReference.Task
+    {
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
     [System.ServiceModel.ServiceContractAttribute(Namespace="http://homeautomation.org/", ConfigurationName="DeviceReference.DeviceWSSoap")]
     public interface DeviceWSSoap
@@ -119,6 +134,13 @@ namespace DeviceReference
         
         [System.ServiceModel.OperationContractAttribute(Action="http://homeautomation.org/InsertDevice", ReplyAction="*")]
         System.Threading.Tasks.Task<DeviceReference.InsertDeviceResponse> InsertDeviceAsync(DeviceReference.InsertDeviceRequest request);
+        
+        // CODEGEN: Generating message contract since element name name from namespace http://homeautomation.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://homeautomation.org/InsertDeviceByAsync", ReplyAction="*")]
+        DeviceReference.InsertDeviceByAsyncResponse InsertDeviceByAsync(DeviceReference.InsertDeviceByAsyncRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://homeautomation.org/InsertDeviceByAsync", ReplyAction="*")]
+        System.Threading.Tasks.Task<DeviceReference.InsertDeviceByAsyncResponse> InsertDeviceByAsyncAsync(DeviceReference.InsertDeviceByAsyncRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://homeautomation.org/UpdateDevice", ReplyAction="*")]
         int UpdateDevice(int id, double value);
@@ -377,6 +399,98 @@ namespace DeviceReference
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class InsertDeviceByAsyncRequest
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="InsertDeviceByAsync", Namespace="http://homeautomation.org/", Order=0)]
+        public DeviceReference.InsertDeviceByAsyncRequestBody Body;
+        
+        public InsertDeviceByAsyncRequest()
+        {
+        }
+        
+        public InsertDeviceByAsyncRequest(DeviceReference.InsertDeviceByAsyncRequestBody Body)
+        {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://homeautomation.org/")]
+    public partial class InsertDeviceByAsyncRequestBody
+    {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string name;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=1)]
+        public System.Nullable<bool> state;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
+        public System.Nullable<double> value;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
+        public int houseId;
+        
+        public InsertDeviceByAsyncRequestBody()
+        {
+        }
+        
+        public InsertDeviceByAsyncRequestBody(string name, System.Nullable<bool> state, System.Nullable<double> value, int houseId)
+        {
+            this.name = name;
+            this.state = state;
+            this.value = value;
+            this.houseId = houseId;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class InsertDeviceByAsyncResponse
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="InsertDeviceByAsyncResponse", Namespace="http://homeautomation.org/", Order=0)]
+        public DeviceReference.InsertDeviceByAsyncResponseBody Body;
+        
+        public InsertDeviceByAsyncResponse()
+        {
+        }
+        
+        public InsertDeviceByAsyncResponse(DeviceReference.InsertDeviceByAsyncResponseBody Body)
+        {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://homeautomation.org/")]
+    public partial class InsertDeviceByAsyncResponseBody
+    {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public DeviceReference.TaskOfInt32 InsertDeviceByAsyncResult;
+        
+        public InsertDeviceByAsyncResponseBody()
+        {
+        }
+        
+        public InsertDeviceByAsyncResponseBody(DeviceReference.TaskOfInt32 InsertDeviceByAsyncResult)
+        {
+            this.InsertDeviceByAsyncResult = InsertDeviceByAsyncResult;
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
     public interface DeviceWSSoapChannel : DeviceReference.DeviceWSSoap, System.ServiceModel.IClientChannel
     {
@@ -509,6 +623,41 @@ namespace DeviceReference
             inValue.Body.value = value;
             inValue.Body.houseId = houseId;
             return ((DeviceReference.DeviceWSSoap)(this)).InsertDeviceAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        DeviceReference.InsertDeviceByAsyncResponse DeviceReference.DeviceWSSoap.InsertDeviceByAsync(DeviceReference.InsertDeviceByAsyncRequest request)
+        {
+            return base.Channel.InsertDeviceByAsync(request);
+        }
+        
+        public DeviceReference.TaskOfInt32 InsertDeviceByAsync(string name, System.Nullable<bool> state, System.Nullable<double> value, int houseId)
+        {
+            DeviceReference.InsertDeviceByAsyncRequest inValue = new DeviceReference.InsertDeviceByAsyncRequest();
+            inValue.Body = new DeviceReference.InsertDeviceByAsyncRequestBody();
+            inValue.Body.name = name;
+            inValue.Body.state = state;
+            inValue.Body.value = value;
+            inValue.Body.houseId = houseId;
+            DeviceReference.InsertDeviceByAsyncResponse retVal = ((DeviceReference.DeviceWSSoap)(this)).InsertDeviceByAsync(inValue);
+            return retVal.Body.InsertDeviceByAsyncResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<DeviceReference.InsertDeviceByAsyncResponse> DeviceReference.DeviceWSSoap.InsertDeviceByAsyncAsync(DeviceReference.InsertDeviceByAsyncRequest request)
+        {
+            return base.Channel.InsertDeviceByAsyncAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<DeviceReference.InsertDeviceByAsyncResponse> InsertDeviceByAsyncAsync(string name, System.Nullable<bool> state, System.Nullable<double> value, int houseId)
+        {
+            DeviceReference.InsertDeviceByAsyncRequest inValue = new DeviceReference.InsertDeviceByAsyncRequest();
+            inValue.Body = new DeviceReference.InsertDeviceByAsyncRequestBody();
+            inValue.Body.name = name;
+            inValue.Body.state = state;
+            inValue.Body.value = value;
+            inValue.Body.houseId = houseId;
+            return ((DeviceReference.DeviceWSSoap)(this)).InsertDeviceByAsyncAsync(inValue);
         }
         
         public int UpdateDevice(int id, double value)
