@@ -20,6 +20,8 @@ namespace ISI.Controllers
             _repository = new UserRepositoryDB(_config["ConnectionStrings:DbConnection"]!);
         }
 
+        #region POST
+
         /// <summary>
         /// Authenticates the User.
         /// </summary>
@@ -98,5 +100,7 @@ namespace ISI.Controllers
             // Return Token
             return Ok(token);
         }
+
+        #endregion
     }
 }

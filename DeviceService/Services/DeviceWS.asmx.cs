@@ -16,6 +16,8 @@ namespace DeviceService.Services
     [WebService(Namespace = "http://homeautomation.org/", Description = "CRUD of Devices database table")]
     public class DeviceWS : WebService
     {
+        #region GET
+
         [WebMethod(Description = "Retrieves all devices from the Devices table.")]
         /// <summary>
         /// Retrieves all devices from the Devices table.
@@ -133,6 +135,10 @@ namespace DeviceService.Services
             return devices;
         }
 
+        #endregion
+
+        #region POST
+
         [WebMethod(Description = "Inserts a new device into the Devices table.")]
         /// <summary>
         /// Inserts a new device into the Devices table.
@@ -239,6 +245,10 @@ namespace DeviceService.Services
             }
         }
 
+        #endregion
+
+        #region PUT
+
         [WebMethod(Description = "Updates the value of a device in the Devices table.")]
         /// <summary>
         /// Updates the value of a device in the Devices table.
@@ -282,6 +292,10 @@ namespace DeviceService.Services
             }
         }
 
+        #endregion
+
+        #region DELETE
+
         [WebMethod(Description = "Deletes devices from the Devices table based on their state.")]
         /// <summary>
         /// Deletes devices from the Devices table based on their Id.
@@ -321,5 +335,7 @@ namespace DeviceService.Services
                 throw e;
             }
         }
+
+        #endregion
     }
 }

@@ -21,6 +21,8 @@ namespace ISI.Controllers
             _repository = new HouseRepositoryDB(_config["ConnectionStrings:DbConnection"]!);
         }
 
+        #region GET
+
         /// <summary>
         /// This Method Gets all the Houses
         /// </summary>
@@ -70,6 +72,9 @@ namespace ISI.Controllers
             return _repository.GetHousesByUser(idUser);
         }
 
+        #endregion
+
+        #region POST
 
         /// <summary>
         /// Creates a new house.
@@ -103,6 +108,9 @@ namespace ISI.Controllers
             return Ok();
         }
 
+        #endregion
+
+        #region PUT
 
         /// <summary>
         /// Updates a house.
@@ -137,6 +145,9 @@ namespace ISI.Controllers
             return Ok();
         }
 
+        #endregion
+
+        #region DELETE
 
         /// <summary>
         /// Deletes a house.
@@ -165,5 +176,6 @@ namespace ISI.Controllers
             return Ok();
         }
 
+        #endregion
     }
 }
