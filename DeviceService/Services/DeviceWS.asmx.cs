@@ -211,7 +211,7 @@ namespace DeviceService.Services
         ///         "houseId": 1
         ///     }
         /// </remarks>
-        public async Task<int> InsertDeviceAsync(string name, bool? state, double? value, int houseId)
+        public async Task<int> InsertDeviceByAsync(string name, bool? state, double? value, int houseId)
         {
             int rowsAffected = 0;
             state = state is null ? false : state;

@@ -141,6 +141,52 @@ namespace ISI.Controllers
                 return StatusCode(500, $"Internal server error: {ex.Message}");
             }
         }
+
+        /// <summary>
+        /// Inserts a new device via Async.
+        /// </summary>
+        /// <param name="device">The device information to insert.</param>
+        /// <returns>An IActionResult indicating the result of the insertion.</returns>
+        /// <remarks>
+        /// Sample Request:
+        ///     POST /api/Devices/async
+        ///     {
+        ///         "id": 1,
+        ///         "name": "Devicetest",
+        ///         "state": false,
+        ///         "value": 30.0,
+        ///         "houseId": 1
+        ///     }
+        /// </remarks>
+        /// <response code="200">Returns an IActionResult indicating the result of the insertion.</response>
+        /// <response code="400">If there was a parameter invalid</response>
+        /// <response code="401">Unauthorized access to execute the method.</response>
+        [Authorize(Roles = "User")]
+        [HttpPost("async")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        public async Task<IActionResult> PostDeviceAsync([FromBody] Models.Device device)
+        {
+            try
+            {
+                int rowsAffected = (await _deviceWSClient.InsertDeviceAsync(device.Name, device.State, device.Value, device.HouseId)).Body.InsertDeviceResult;
+
+                if (rowsAffected > 0)
+                {
+                    return Ok($"Device inserted successfully. Rows affected: {rowsAffected}");
+                }
+                else
+                {
+                    return BadRequest("Failed to insert device.");
+                }
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Internal server error: {ex.Message}");
+            }
+        }
+
         #endregion
 
         #region PUT
