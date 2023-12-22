@@ -177,7 +177,7 @@ namespace DeviceService.Services
         /// <param name="value">The value of the device.</param>
         /// <param name="houseId">The ID of the house to which the device belongs.</param>
         /// <returns>The number of rows affected by the insertion operation.</returns>
-        public async Task<int> InsertDeviceAsync(string name, bool? state, double? value, int houseId)
+        public async Task<int> InsertDeviceByAsync(string name, bool? state, double? value, int houseId)
         {
             int rowsAffected = 0;
             state = state is null ? false : state;

@@ -23,6 +23,7 @@
       "Microsoft.IdentityModel.Tokens.Saml, {Microsoft.IdentityModel.Tokens.Saml, 6.8.0}",
       "Microsoft.IdentityModel.Xml, {Microsoft.IdentityModel.Xml, 6.8.0}",
       "Microsoft.OpenApi, {Microsoft.OpenApi, 1.2.3}",
+      "Swashbuckle.AspNetCore.Annotations, {Swashbuckle.AspNetCore.Annotations, 6.5.0}",
       "Swashbuckle.AspNetCore.Swagger, {Swashbuckle.AspNetCore.Swagger, 6.5.0}",
       "Swashbuckle.AspNetCore.SwaggerGen, {Swashbuckle.AspNetCore.SwaggerGen, 6.5.0}",
       "Swashbuckle.AspNetCore.SwaggerUI, {Swashbuckle.AspNetCore.SwaggerUI, 6.5.0}",

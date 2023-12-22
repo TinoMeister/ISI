@@ -17,6 +17,7 @@ C:\Users\tiago\Code\School\ISI\tp2\ISI\REST\ISI\obj\Release\net8.0\linux-x64\Pub
 C:\Users\tiago\Code\School\ISI\tp2\ISI\REST\ISI\obj\Release\net8.0\linux-x64\PubTmp\Out\Microsoft.IdentityModel.Tokens.Saml.dll
 C:\Users\tiago\Code\School\ISI\tp2\ISI\REST\ISI\obj\Release\net8.0\linux-x64\PubTmp\Out\Microsoft.IdentityModel.Xml.dll
 C:\Users\tiago\Code\School\ISI\tp2\ISI\REST\ISI\obj\Release\net8.0\linux-x64\PubTmp\Out\Microsoft.OpenApi.dll
+C:\Users\tiago\Code\School\ISI\tp2\ISI\REST\ISI\obj\Release\net8.0\linux-x64\PubTmp\Out\Swashbuckle.AspNetCore.Annotations.dll
 C:\Users\tiago\Code\School\ISI\tp2\ISI\REST\ISI\obj\Release\net8.0\linux-x64\PubTmp\Out\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\tiago\Code\School\ISI\tp2\ISI\REST\ISI\obj\Release\net8.0\linux-x64\PubTmp\Out\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\tiago\Code\School\ISI\tp2\ISI\REST\ISI\obj\Release\net8.0\linux-x64\PubTmp\Out\Swashbuckle.AspNetCore.SwaggerUI.dll

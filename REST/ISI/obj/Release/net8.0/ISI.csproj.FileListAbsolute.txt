@@ -85,3 +85,4 @@ C:\Users\tiago\Code\School\ISI\tp2\ISI\REST\ISI\obj\Release\net8.0\ISI.xml
 C:\Users\tiago\Code\School\ISI\tp2\ISI\REST\ISI\obj\Release\net8.0\ISI.pdb
 C:\Users\tiago\Code\School\ISI\tp2\ISI\REST\ISI\obj\Release\net8.0\ISI.genruntimeconfig.cache
 C:\Users\tiago\Code\School\ISI\tp2\ISI\REST\ISI\obj\Release\net8.0\ref\ISI.dll
+C:\Users\tiago\Code\School\ISI\tp2\ISI\REST\ISI\bin\Release\net8.0\Swashbuckle.AspNetCore.Annotations.dll
